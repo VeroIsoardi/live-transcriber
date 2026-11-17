@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Live Transcriber",
+  "version": "0.2.0",
+  "description": "Transcribe en vivo el audio de una pestaña (ej. un vivo de YouTube) con Deepgram.",
+  "permissions": ["tabCapture", "offscreen", "sidePanel", "storage", "activeTab"],
+  "background": { "service_worker": "background.js" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "action": { "default_title": "Transcribir esta pestaña" },
+  "minimum_chrome_version": "116"
+}

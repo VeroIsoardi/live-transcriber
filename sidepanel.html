@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Live Transcriber</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <header>
+    <h1>Live Transcriber</h1>
+    <span id="status" class="status idle">Detenido</span>
+  </header>
+
+  <details id="settings">
+    <summary>Configuración</summary>
+    <label>API key de Deepgram
+      <input id="apiKey" type="password" autocomplete="off" placeholder="Pegá tu key">
+    </label>
+    <div class="row">
+      <label>Idioma
+        <select id="language">
+          <option value="es">Español</option>
+          <option value="multi">Multilingüe</option>
+          <option value="en">Inglés</option>
+        </select>
+      </label>
+      <label>Modelo
+        <select id="model">
+          <option value="nova-3">nova-3</option>
+          <option value="nova-2">nova-2</option>
+        </select>
+      </label>
+    </div>
+    <button id="save" type="button">Guardar</button>
+  </details>
+
+  <div class="controls">
+    <p class="hint">Para empezar, tocá el <strong>ícono de la extensión</strong> estando en la pestaña del vivo.</p>
+    <button id="stop" type="button" disabled>Detener</button>
+  </div>
+
+  <main id="transcript" aria-live="polite">
+    <p class="empty">La transcripción va a aparecer acá.</p>
+  </main>
+  <p id="interim" class="interim"></p>
+
+  <footer>
+    <button id="copy" type="button">Copiar</button>
+    <button id="export" type="button">Exportar .txt</button>
+    <button id="clear" type="button">Limpiar</button>
+  </footer>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
